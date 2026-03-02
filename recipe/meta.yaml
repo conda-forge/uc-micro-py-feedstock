@@ -1,16 +1,16 @@
 {% set name = "uc-micro-py" %}
-{% set version = "1.0.3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d321b92cff673ec58027c04015fcaa8bb1e005478643ff4a500882eaab88c48a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
